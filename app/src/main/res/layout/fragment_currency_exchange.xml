@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary60"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.CurrencyExchangeFragment">
+
+    <EditText
+        android:id="@+id/etCurrencyInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/input_text_size"
+        android:textStyle="bold"
+        android:gravity="end"
+        android:background="@color/secondary30"
+        android:paddingHorizontal="@dimen/dp_12"
+        android:textColor="@color/textColor"
+        android:paddingTop="@dimen/dp_26"
+        android:hint="@string/et_hint"
+        android:inputType="numberDecimal|numberSigned"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="LabelFor"
+         />
+
+    <Spinner
+        android:id="@+id/switchCountrySpinner"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dp_12"
+        android:background="@drawable/sharp_rectangle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCurrencyInput"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCurrencyExchange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginEnd="@dimen/dp_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/currency_grid_item"
+        app:spanCount="2"
+        tools:itemCount="18"
+        android:layout_marginTop="@dimen/dp_16"
+        tools:visibility="visible"
+        android:visibility="visible"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/switchCountrySpinner"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
